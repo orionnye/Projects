@@ -1,0 +1,21 @@
+{
+    "files": [
+        "www/foo.html",
+        "www/bar.html"
+    ],
+    "compilerOptions": {
+        "module": "CommonJS",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "lib",
+        "sourceMap": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

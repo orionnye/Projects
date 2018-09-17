@@ -1,0 +1,64 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Manual Table Grid</h1>
+        <style>
+        td {
+            border: solid 1px black;
+            margin: 0;
+        }
+        </style>
+        <table>
+            <tr><td>0,0</td><td>1,0</td><td>2,0</td></tr>
+            <tr><td>0,1</td><td>1,1</td><td>2,1</td></tr>
+            <tr><td>0,2</td><td>1,2</td><td>2,2</td></tr>
+        </table>
+        <h1>Manual Div Grid</h1>
+        <style>
+            .grid {
+                display: inline-block;
+                border-right: solid 1px black;
+                border-bottom: solid 1px black;
+            }
+            /* rows */
+            .grid > DIV {
+                display: block;
+            }
+            /* cells */
+            .grid > DIV > DIV {
+                display: inline-block;
+                padding: 4px;
+                border: solid 1px black;
+                border-right: none;
+                border-bottom: none;
+            }
+        </style>
+        <div class='grid'>
+            <div><div>0,0</div><div>1,0</div><div>2,0</div></div>
+            <div><div>0,1</div><div>1,1</div><div>2,1</div></div>
+            <div><div>0,2</div><div>1,2</div><div>2,2</div></div>
+        </div>
+        <h1>Dynamic Div Grid</h1>
+        <div class='grid' id='dynamicGrid'>
+        </div>
+        <script>
+            let width = 5, height = 10;
+            let gridModel = []
+            for (let y = 0; y < height; y++) {
+                let row = [];
+                for (let x = 0; x < width; x++) {
+                    row.push({"x":x,"y":y});
+                }
+                gridModel.push(row);
+            }
+            dynamicGrid.innerHTML = gridModel.map(row => {
+                // we convert (or 'map') each row into a div row
+                return "<div>" + row.map(cell => {
+                    //  we map each cell into a <div>x, y</div>
+                    return `<div>${cell.x},${cell.y}</div>`
+                }).join("") + "</div>"
+            }).join("")
+        </script>
+    </body>
+</html>

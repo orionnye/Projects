@@ -1,0 +1,16 @@
+{
+  "name": "webserverts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Client.ts",
+  "scripts": {
+    "start": "node lib/Client.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^10.1.4"
+  }
+}
