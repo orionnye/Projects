@@ -9,8 +9,8 @@ const server = net.createServer((socket) => {
     })
     socket.write(
 `HTTP/1.0 200 OK
-Orion: Gay
-Chase: Homo
+Orion: Moderate
+Chase: Fine
 
 <B>Hello</B> HTML`
 );
